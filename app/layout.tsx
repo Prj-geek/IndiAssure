@@ -18,14 +18,14 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "IndiAssure — Insurance for India's Small Shops",
+  title: "IndiAssure — Insurance that trusts you first",
   description:
     "Simple fire, theft, and disaster protection for small Indian shop owners. No tax papers needed.",
   icons: {
     icon: "/logo/logo-light-full.png",
   },
   openGraph: {
-    title: "IndiAssure — Insurance for India's Small Shops",
+    title: "IndiAssure — Insurance that trusts you first",
     description:
       "Simple fire, theft, and disaster protection for small Indian shop owners. No tax papers needed.",
     url: "https://indiassure.com",

@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
 
         <span className="mt-8 inline-block text-xs font-medium uppercase tracking-widest text-mint-soft">
-          Insurance for India&rsquo;s small shops
+          Insurance that trusts you first
         </span>
 
         <h1 className="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-cream">
