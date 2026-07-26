@@ -1,24 +1,30 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
-import { Store } from "lucide-react";
 
 const stories = [
   {
-    name: "Ramesh",
-    shop: "Garment shop, Surat",
+    name: "Kuldeep Kumar",
+    shop: "Chikankari kurta shop, Dilli Haat, Delhi",
     story:
-      "A short-circuit fire gutted his stock overnight. Twenty years of savings were in that shop — none of it insured. He's still repaying suppliers.",
+      "A fire gutted over 30 shops at Dilli Haat in Delhi\u2019s INA market area. Kumar told reporters he\u2019d been saving for his sister\u2019s wedding the following year \u2014 the fire took everything in his shop. The Delhi government later promised affected vendors compensation and reallocated stalls.",
+    source: "India TV News",
+    image: "/stories/kuldeep.jpeg",
   },
   {
-    name: "Fatima",
-    shop: "Electronics shop, Lucknow",
+    name: "Jaspal Singh",
+    shop: "Colours N Tones garment store, Model Town, Ludhiana",
     story:
-      "A break-in cleared out her display counters in one night. The police report took weeks; the loss was immediate and total.",
+      "Thieves broke onto the roof of an under-construction building next door, entered his store from above, and took the CCTV recorder\u2019s hard drive with them, leaving no footage. He lost close to \u20B97 lakh in cash and stock, from a store he\u2019d opened just six months earlier.",
+    source: "The Tribune",
+    image: "/stories/jaspal.jpeg",
   },
   {
-    name: "Suresh",
-    shop: "Grocery store, Nagpur",
+    name: "Ashok Kumar Bansal",
+    shop: "Sanwaria Electricals, Bhuna market, Haryana",
     story:
-      "Monsoon flooding ruined his stock for the second year running. Each time, he rebuilt from scratch — because there was nothing else to do.",
+      "He said that in the 2022 flood he lost \u20B916 lakh, and the government compensation that eventually came through was \u20B915,000. This time, water entered the market again, and he said \u201Cwe cannot accept such injustice again.\u201D",
+    source: "The Times of India",
+    image: "/stories/ashok.jpeg",
   },
 ];
 
@@ -31,16 +37,21 @@ export default function StoryCards() {
             This happens more than you&rsquo;d think
           </h2>
           <p className="mt-4 text-center text-ink/50 text-sm max-w-xl mx-auto italic">
-            Illustrative composite scenarios based on common, real risks —
-            not documented individuals.
+            Real incidents, real people &mdash; the risks are not hypothetical.
           </p>
         </Reveal>
         <div className="mt-16 grid sm:grid-cols-3 gap-8">
           {stories.map((s, i) => (
             <Reveal key={s.name} delay={i * 120}>
               <div className="rounded-2xl border border-ink/10 bg-cream overflow-hidden h-full transition-shadow hover:shadow-lg">
-                <div className="h-36 bg-ink/[0.06] flex items-center justify-center">
-                  <Store className="w-10 h-10 text-clay/60" />
+                <div className="relative h-48 bg-ink/[0.06]">
+                  <Image
+                    src={s.image}
+                    alt={s.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-lg text-ink">{s.name}</h3>
@@ -48,6 +59,9 @@ export default function StoryCards() {
                     {s.shop}
                   </p>
                   <p className="mt-3 text-base text-ink/60">{s.story}</p>
+                  <p className="mt-3 text-xs text-ink/40 italic">
+                    Reported by {s.source}
+                  </p>
                 </div>
               </div>
             </Reveal>
