@@ -2,31 +2,29 @@ import { Mail } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section className="py-20 sm:py-28 bg-linen">
+    <section className="py-20 sm:py-28 bg-cream-dim">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="flex items-center justify-center gap-2 mb-4">
-          <Mail className="w-5 h-5 text-secondary" />
-          <span className="text-sm font-medium text-primary/60 uppercase tracking-wider">
-            Get in touch
-          </span>
-        </div>
-        <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+        <span className="text-xs font-medium uppercase tracking-widest text-ink/50">
+          Get in touch
+        </span>
+        <h2 className="mt-3 font-display text-3xl sm:text-4xl text-ink">
           Let&rsquo;s talk
         </h2>
-        <p className="mt-4 text-primary/60 max-w-md mx-auto">
-          Whether you&rsquo;re a shop owner, investor, or insurance partner — we&rsquo;d love to hear from you.
+        <p className="mt-4 text-ink/60 max-w-md mx-auto">
+          Whether you&rsquo;re a shop owner, investor, or insurance partner —
+          we&rsquo;d love to hear from you.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="mailto:2727priyanshu@gmail.com"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-background font-medium hover:bg-primary/90 transition-colors"
+            className="btn-pill bg-ink text-cream hover:bg-ink-soft"
           >
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4 text-mint-soft" />
             2727priyanshu@gmail.com
           </a>
           <a
             href="mailto:amritsnanda@gmail.com"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-primary/20 text-primary font-medium hover:bg-primary/5 transition-colors"
+            className="btn-pill border border-ink/20 text-ink hover:bg-ink/5"
           >
             <Mail className="w-4 h-4" />
             amritsnanda@gmail.com

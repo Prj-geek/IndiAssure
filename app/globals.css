@@ -1,35 +1,82 @@
 @import "tailwindcss";
 
 :root {
-  --background: #E2E7DB;
-  --foreground: #154307;
-  --primary: #154307;
-  --accent: #AFE565;
-  --secondary: #7BD16E;
-  --muted: #D4C5DD;
-  --warm: #E1938E;
-  --linen: #E2E7DB;
+  --cream: #F6F1E6;
+  --cream-dim: #EEE5D2;
+  --ink: #14231C;
+  --ink-soft: #1E3128;
+  --mint: #4FB88A;
+  --mint-soft: #A9DEC7;
+  --clay: #C97B4A;
+
+  /* legacy aliases so older pages (demo/blogs) keep working on the new palette */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --primary: var(--ink);
+  --secondary: var(--mint);
+  --accent: var(--mint-soft);
+  --muted: var(--cream-dim);
+  --warm: var(--clay);
+  --linen: var(--cream-dim);
 }
 
 @theme inline {
+  --color-cream: var(--cream);
+  --color-cream-dim: var(--cream-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-mint: var(--mint);
+  --color-mint-soft: var(--mint-soft);
+  --color-clay: var(--clay);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-jakarta);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-accent: var(--accent);
   --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-warm: var(--warm);
   --color-linen: var(--linen);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--cream);
+  color: var(--ink);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-feature-settings: "liga" 1, "dlig" 1, "kern" 1;
+}
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-pill:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn-pill {
+    transition: none;
+  }
 }
