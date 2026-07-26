@@ -23,14 +23,14 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
         <div className="flex items-center justify-center gap-3">
           <Image
-            src="/logo/logo-light-icon.png"
+            src="/logo/logo-dark-icon.png"
             alt=""
             width={44}
             height={36}
             className="h-9 w-auto"
           />
           <Image
-            src="/logo/logo-light-wordmark-only.png"
+            src="/logo/logo-dark-wordmark-only.png"
             alt="IndiAssure"
             width={200}
             height={34}

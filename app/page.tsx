@@ -35,14 +35,14 @@ export default function Home() {
           <div>
             <div className="flex items-center gap-2 font-display text-2xl">
               <Image
-                src="/logo/logo-light-icon.png"
+                src="/logo/logo-dark-icon.png"
                 alt=""
                 width={36}
                 height={30}
                 className="h-8 w-auto"
               />
               <Image
-                src="/logo/logo-light-wordmark-only.png"
+                src="/logo/logo-dark-wordmark-only.png"
                 alt="IndiAssure"
                 width={160}
                 height={28}

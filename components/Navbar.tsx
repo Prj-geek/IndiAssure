@@ -23,7 +23,7 @@ export default function Navbar() {
             className="flex items-center gap-2 font-display text-xl text-ink"
           >
             <Image
-              src="/logo/logo-dark-icon.png"
+              src="/logo/logo-light-icon.png"
               alt=""
               width={32}
               height={26}
@@ -31,7 +31,7 @@ export default function Navbar() {
               priority
             />
             <Image
-              src="/logo/logo-dark-wordmark-only.png"
+              src="/logo/logo-light-wordmark-only.png"
               alt="IndiAssure"
               width={140}
               height={24}
