@@ -50,16 +50,10 @@ export default function Home() {
               />
             </div>
             <a
-              href="mailto:2727priyanshu@gmail.com"
+              href="mailto:hello@indiassure.com"
               className="mt-6 block text-sm text-cream/70 hover:text-mint-soft transition-colors"
             >
-              2727priyanshu@gmail.com
-            </a>
-            <a
-              href="mailto:amritsnanda@gmail.com"
-              className="mt-2 block text-sm text-cream/70 hover:text-mint-soft transition-colors"
-            >
-              amritsnanda@gmail.com
+              hello@indiassure.com
             </a>
           </div>
           <div className="flex flex-col gap-3 text-sm uppercase tracking-widest text-cream/70">

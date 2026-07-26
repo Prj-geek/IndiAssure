@@ -48,8 +48,8 @@ export default function TermsPage() {
               <h2 className="font-display text-xl text-ink mb-2">5. Contact</h2>
               <p>
                 Questions about these terms? Email us at{" "}
-                <a href="mailto:2727priyanshu@gmail.com" className="text-mint hover:underline">
-                  2727priyanshu@gmail.com
+                <a href="mailto:hello@indiassure.com" className="text-mint hover:underline">
+                  hello@indiassure.com
                 </a>.
               </p>
             </section>

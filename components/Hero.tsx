@@ -70,7 +70,7 @@ export default function Hero() {
             <ChevronRight className="w-4 h-4 text-mint" />
           </Link>
           <a
-            href="mailto:2727priyanshu@gmail.com"
+            href="mailto:hello@indiassure.com"
             className="btn-pill border border-cream/25 text-cream hover:bg-cream/10"
           >
             Talk to us

@@ -51,7 +51,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="mailto:2727priyanshu@gmail.com"
+              href="mailto:hello@indiassure.com"
               className="btn-pill bg-ink text-cream hover:bg-ink-soft text-xs uppercase tracking-widest py-2.5 px-5"
             >
               Contact
@@ -82,7 +82,7 @@ export default function Navbar() {
               </Link>
             ))}
             <a
-              href="mailto:2727priyanshu@gmail.com"
+              href="mailto:hello@indiassure.com"
               className="block text-sm font-medium uppercase tracking-wide text-ink/70"
             >
               Contact
