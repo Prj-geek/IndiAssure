@@ -1,5 +1,6 @@
 import { BarChart3, FileX, Flame } from "lucide-react";
 import Reveal from "./Reveal";
+import UninsuredStat from "./UninsuredStat";
 
 const problems = [
   {
@@ -32,11 +33,12 @@ export default function Problem() {
             decades building their small businesses. That&rsquo;s why
             we&rsquo;re doing this.
           </p>
+          <UninsuredStat />
         </Reveal>
         <div className="mt-16 grid sm:grid-cols-3 gap-10">
           {problems.map((p, i) => (
             <Reveal key={p.title} delay={i * 100}>
-              <div className="text-center">
+              <div className="text-center transition-shadow hover:shadow-lg rounded-2xl p-6">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15 mb-5">
                   <p.icon className="w-7 h-7 text-clay" />
                 </div>

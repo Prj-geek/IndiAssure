@@ -30,12 +30,12 @@ export default function BlogsPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 py-12 sm:py-20 bg-background">
+      <main className="flex-1 py-12 sm:py-20 bg-cream">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-primary">
+          <h1 className="text-3xl sm:text-4xl font-display text-ink">
             Blog
           </h1>
-          <p className="mt-3 text-primary/60 max-w-lg">
+          <p className="mt-3 text-ink/60 max-w-lg">
             Writeups about the problem we&rsquo;re solving and why it matters.
           </p>
 
@@ -44,17 +44,17 @@ export default function BlogsPage() {
               <Link
                 key={blog.slug}
                 href={`/blogs/${blog.slug}`}
-                className="block p-6 rounded-xl border border-primary/10 bg-linen/50 hover:border-secondary/40 transition-colors group"
+                className="block p-6 rounded-xl border border-ink/10 bg-cream-dim/50 hover:border-mint/40 transition-colors group"
               >
-                <div className="flex items-center gap-2 text-sm text-primary/40">
+                <div className="flex items-center gap-2 text-sm text-ink/40">
                   <Calendar className="w-4 h-4" />
                   {blog.date}
                 </div>
-                <h2 className="mt-2 text-xl font-semibold text-primary group-hover:text-secondary transition-colors">
+                <h2 className="mt-2 font-display text-xl text-ink group-hover:text-mint transition-colors">
                   {blog.title}
                 </h2>
-                <p className="mt-2 text-sm text-primary/60">{blog.excerpt}</p>
-                <div className="mt-3 flex items-center gap-1 text-sm font-medium text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+                <p className="mt-2 text-sm text-ink/60">{blog.excerpt}</p>
+                <div className="mt-3 flex items-center gap-1 text-sm font-medium text-mint opacity-0 group-hover:opacity-100 transition-opacity">
                   Read more <ArrowRight className="w-4 h-4" />
                 </div>
               </Link>
@@ -62,7 +62,7 @@ export default function BlogsPage() {
           </div>
         </div>
       </main>
-      <footer className="py-8 text-center text-sm text-primary/40 border-t border-primary/10">
+      <footer className="py-8 text-center text-sm text-ink/40 border-t border-ink/10">
         © {new Date().getFullYear()} IndiAssure. All rights reserved.
       </footer>
     </>

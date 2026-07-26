@@ -1,4 +1,4 @@
-import { PhoneCall, UserCheck, IndianRupee } from "lucide-react";
+import { PhoneCall, UserCheck, IndianRupee, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 const steps = [
@@ -28,20 +28,25 @@ export default function ClaimsProcess() {
             If something happens, here&rsquo;s what you do
           </h2>
         </Reveal>
-        <div className="mt-16 grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 max-w-4xl mx-auto">
           {steps.map((s, i) => (
             <Reveal key={s.title} delay={i * 100}>
-              <div className="text-center">
-                <div className="relative inline-flex">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15">
-                    <s.icon className="w-7 h-7 text-ink" />
+              <div className="flex items-center gap-4">
+                <div className="text-center w-48">
+                  <div className="relative inline-flex">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15">
+                      <s.icon className="w-7 h-7 text-ink" />
+                    </div>
+                    <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-mint text-cream text-xs font-semibold flex items-center justify-center">
+                      {i + 1}
+                    </span>
                   </div>
-                  <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-mint text-cream text-xs font-semibold flex items-center justify-center">
-                    {i + 1}
-                  </span>
+                  <h3 className="mt-4 font-display text-lg text-ink">{s.title}</h3>
+                  <p className="mt-2 text-base text-ink/60">{s.desc}</p>
                 </div>
-                <h3 className="mt-4 font-display text-lg text-ink">{s.title}</h3>
-                <p className="mt-2 text-base text-ink/60">{s.desc}</p>
+                {i < steps.length - 1 && (
+                  <ArrowRight className="w-8 h-8 text-mint shrink-0 hidden sm:block" />
+                )}
               </div>
             </Reveal>
           ))}

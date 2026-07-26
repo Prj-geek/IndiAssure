@@ -22,13 +22,13 @@ export default function DemoPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-1 py-12 sm:py-20 bg-background">
+      <main className="flex-1 py-12 sm:py-20 bg-cream">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h1 className="text-3xl sm:text-4xl font-bold text-primary">
+            <h1 className="text-3xl sm:text-4xl font-display text-ink">
               Try the demo
             </h1>
-            <p className="mt-3 text-primary/60 max-w-lg mx-auto">
+            <p className="mt-3 text-ink/60 max-w-lg mx-auto">
               Get an instant coverage estimate based on your shop details. This
               takes 2 minutes.
             </p>
@@ -54,7 +54,7 @@ export default function DemoPage() {
           </p>
         </div>
       </main>
-      <footer className="py-8 text-center text-sm text-primary/40 border-t border-primary/10">
+      <footer className="py-8 text-center text-sm text-ink/40 border-t border-ink/10">
         © {new Date().getFullYear()} IndiAssure. All rights reserved.
       </footer>
     </>

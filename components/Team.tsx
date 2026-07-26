@@ -32,7 +32,7 @@ export default function Team() {
         <div className="mt-16 grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {team.map((t, i) => (
             <Reveal key={t.name} delay={i * 100}>
-              <div className="rounded-2xl border border-ink/10 bg-cream-dim/60 p-6">
+              <div className="rounded-2xl border border-ink/10 bg-cream-dim/60 p-6 transition-shadow hover:shadow-lg">
                 <h3 className="font-display text-lg text-ink">{t.name}</h3>
                 <p className="text-sm text-mint font-medium">{t.role}</p>
                 <p className="mt-3 text-base text-ink/60 italic">

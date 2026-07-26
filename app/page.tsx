@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
@@ -11,7 +12,6 @@ import FAQ from "@/components/FAQ";
 import ClaimsProcess from "@/components/ClaimsProcess";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
-import Mark from "@/components/Mark";
 
 export default function Home() {
   return (
@@ -34,9 +34,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col sm:flex-row justify-between gap-12">
           <div>
             <div className="flex items-center gap-1 font-display text-2xl">
-              <span>Indi</span>
-              <Mark className="w-4 h-5 text-mint translate-y-[1px]" />
-              <span>Assure</span>
+              <Image
+                src="/logo/logo-light-wordmark-only.png"
+                alt="IndiAssure"
+                width={160}
+                height={28}
+                className="h-7 w-auto"
+              />
             </div>
             <a
               href="mailto:2727priyanshu@gmail.com"
@@ -75,12 +79,12 @@ export default function Home() {
               © {new Date().getFullYear()} IndiAssure. All rights reserved.
             </span>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-cream/60 transition-colors">
+              <Link href="/privacy" className="hover:text-cream/60 transition-colors">
                 Privacy
-              </a>
-              <a href="#" className="hover:text-cream/60 transition-colors">
+              </Link>
+              <Link href="/terms" className="hover:text-cream/60 transition-colors">
                 Terms
-              </a>
+              </Link>
             </div>
           </div>
         </div>

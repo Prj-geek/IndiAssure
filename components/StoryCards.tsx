@@ -38,7 +38,7 @@ export default function StoryCards() {
         <div className="mt-16 grid sm:grid-cols-3 gap-8">
           {stories.map((s, i) => (
             <Reveal key={s.name} delay={i * 120}>
-              <div className="rounded-2xl border border-ink/10 bg-cream overflow-hidden h-full">
+              <div className="rounded-2xl border border-ink/10 bg-cream overflow-hidden h-full transition-shadow hover:shadow-lg">
                 <div className="h-36 bg-ink/[0.06] flex items-center justify-center">
                   <Store className="w-10 h-10 text-clay/60" />
                 </div>

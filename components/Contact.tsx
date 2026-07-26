@@ -1,11 +1,43 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import Reveal from "./Reveal";
+
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!ACCESS_KEY) {
+      setError("Contact form not configured. Please email us directly.");
+      return;
+    }
+    setLoading(true);
+    setError("");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSent(true);
+      } else {
+        setError("Something went wrong. Please try again or email us.");
+      }
+    } catch {
+      setError("Something went wrong. Please try again or email us.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section className="py-20 sm:py-28 bg-cream">
@@ -35,19 +67,31 @@ export default function Contact() {
             </Reveal>
           ) : (
             <Reveal delay={100}>
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  setSent(true);
-                }}
-                className="mt-10 space-y-4"
-              >
+              <form onSubmit={handleSubmit} className="mt-10 space-y-4">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value={ACCESS_KEY}
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="IndiAssure — New Contact"
+                />
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: "none" }}
+                  tabIndex={-1}
+                />
                 <div>
                   <label className="block text-sm font-medium text-ink mb-1">
                     Name
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream-dim/40 text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
                   />
@@ -58,6 +102,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream-dim/40 text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
                   />
@@ -67,16 +112,25 @@ export default function Contact() {
                     Message
                   </label>
                   <textarea
+                    name="message"
                     rows={4}
                     className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream-dim/40 text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint resize-none"
                   />
                 </div>
+                {error && (
+                  <p className="text-sm text-red-600 text-center">{error}</p>
+                )}
                 <button
                   type="submit"
-                  className="btn-pill bg-ink text-cream hover:bg-ink-soft w-full"
+                  disabled={loading}
+                  className="btn-pill bg-ink text-cream hover:bg-ink-soft w-full disabled:opacity-50"
                 >
-                  <Send className="w-4 h-4" />
-                  Send message
+                  {loading ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Send className="w-4 h-4" />
+                  )}
+                  {loading ? "Sending..." : "Send message"}
                 </button>
                 <p className="text-center text-xs text-ink/40">
                   This is a pre-launch form. We&rsquo;ll reach out within 48
