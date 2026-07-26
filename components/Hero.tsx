@@ -57,7 +57,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-4 text-sm text-cream/40">
-          <span className="text-mint font-medium">85%</span> of India&rsquo;s 70
+          <span className="text-mint font-medium">85%</span>{" "} of India&rsquo;s 70
           million small shops have no insurance.
         </p>
 
