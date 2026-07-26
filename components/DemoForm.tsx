@@ -8,7 +8,11 @@ export interface ShopData {
   shopSize: number;
   state: string;
   city: string;
+  pincode: string;
   stockValue: number;
+  floor: "ground" | "upper" | "";
+  denseMarket: "yes" | "no" | "";
+  yearsInOperation: number;
   photos: string[];
   description: string;
 }
@@ -45,7 +49,11 @@ export default function DemoForm({ onSubmit }: Props) {
     shopSize: 0,
     state: "",
     city: "",
+    pincode: "",
     stockValue: 0,
+    floor: "",
+    denseMarket: "",
+    yearsInOperation: 0,
     photos: [],
     description: "",
   });
@@ -68,7 +76,12 @@ export default function DemoForm({ onSubmit }: Props) {
       });
   };
 
-  const valid = data.shopType && data.shopSize > 0 && data.stockValue > 0;
+  const valid =
+    data.shopType &&
+    data.shopSize > 0 &&
+    data.stockValue > 0 &&
+    data.floor &&
+    data.denseMarket;
 
   return (
     <div className="max-w-2xl mx-auto p-6 sm:p-8 rounded-2xl border border-ink/10 bg-cream-dim/40">
@@ -154,6 +167,23 @@ export default function DemoForm({ onSubmit }: Props) {
 
         <div>
           <label className="block text-sm font-medium text-ink mb-1">
+            Pincode
+          </label>
+          <input
+            type="text"
+            inputMode="numeric"
+            maxLength={6}
+            value={data.pincode}
+            onChange={(e) =>
+              setData((d) => ({ ...d, pincode: e.target.value }))
+            }
+            placeholder="e.g. 411001"
+            className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-ink mb-1">
             Estimated stock value (₹)
           </label>
           <input
@@ -168,6 +198,67 @@ export default function DemoForm({ onSubmit }: Props) {
               }))
             }
             placeholder="e.g. 200000"
+            className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
+          />
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1">
+              Floor level
+            </label>
+            <select
+              value={data.floor}
+              onChange={(e) =>
+                setData((d) => ({
+                  ...d,
+                  floor: e.target.value as ShopData["floor"],
+                }))
+              }
+              className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
+            >
+              <option value="">Select floor</option>
+              <option value="ground">Ground floor</option>
+              <option value="upper">Upper floor</option>
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-ink mb-1">
+              Dense market / cluster?
+            </label>
+            <select
+              value={data.denseMarket}
+              onChange={(e) =>
+                setData((d) => ({
+                  ...d,
+                  denseMarket: e.target.value as ShopData["denseMarket"],
+                }))
+              }
+              className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
+            >
+              <option value="">Select</option>
+              <option value="yes">Yes — shared building / crowded market</option>
+              <option value="no">No — standalone / spread out</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-ink mb-1">
+            Years in operation
+          </label>
+          <input
+            type="number"
+            min={0}
+            max={100}
+            value={data.yearsInOperation || ""}
+            onChange={(e) =>
+              setData((d) => ({
+                ...d,
+                yearsInOperation: Number(e.target.value),
+              }))
+            }
+            placeholder="e.g. 5"
             className="w-full px-4 py-2.5 rounded-lg border border-ink/15 bg-cream text-ink text-sm focus:outline-none focus:ring-2 focus:ring-mint"
           />
         </div>
