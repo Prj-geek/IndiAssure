@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "IndiAssure — Insurance for India's Small Shops",
   description:
     "Simple fire, theft, and disaster protection for small Indian shop owners. No tax papers needed.",
+  icons: {
+    icon: "/logo.png",
+  },
   openGraph: {
     title: "IndiAssure — Insurance for India's Small Shops",
     description:

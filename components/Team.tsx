@@ -1,5 +1,3 @@
-import { Camera } from "lucide-react";
-
 const team = [
   {
     name: "Priyanshu Raj",
@@ -17,30 +15,27 @@ const team = [
   },
 ];
 
+import Reveal from "./Reveal";
+
 export default function Team() {
   return (
     <section className="py-20 sm:py-28 bg-cream">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <span className="block text-center text-xs font-medium uppercase tracking-widest text-ink/50">
-          The team
-        </span>
-        <h2 className="mt-3 font-display text-3xl sm:text-4xl text-ink text-center">
-          Meet the team
-        </h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <span className="block text-center text-xs font-medium uppercase tracking-widest text-ink/50">
+            The team
+          </span>
+          <h2 className="mt-3 font-display text-4xl sm:text-5xl lg:text-6xl text-ink text-center">
+            Meet the team
+          </h2>
+        </Reveal>
         <div className="mt-16 grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {team.map((t) => (
-            <div
-              key={t.name}
-              className="rounded-2xl border border-ink/10 bg-cream-dim/60 overflow-hidden"
-            >
-              {/* photo placeholder */}
-              <div className="h-48 bg-ink/5 flex items-center justify-center">
-                <Camera className="w-10 h-10 text-ink/15" />
-              </div>
-              <div className="p-6">
+          {team.map((t, i) => (
+            <Reveal key={t.name} delay={i * 100}>
+              <div className="rounded-2xl border border-ink/10 bg-cream-dim/60 p-6">
                 <h3 className="font-display text-lg text-ink">{t.name}</h3>
                 <p className="text-sm text-mint font-medium">{t.role}</p>
-                <p className="mt-3 text-sm text-ink/60 italic">
+                <p className="mt-3 text-base text-ink/60 italic">
                   &ldquo;{t.motto}&rdquo;
                 </p>
                 <a
@@ -55,7 +50,7 @@ export default function Team() {
                   LinkedIn
                 </a>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

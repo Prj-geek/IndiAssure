@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Reveal from "./Reveal";
 
 const faqs = [
   {
@@ -32,30 +33,34 @@ export default function FAQ() {
   return (
     <section className="py-20 sm:py-28 bg-cream">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-3xl sm:text-4xl text-ink text-center">
-          Frequently asked questions
-        </h2>
+        <Reveal>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink text-center">
+            Frequently asked questions
+          </h2>
+        </Reveal>
 
         <div className="mt-12">
           {faqs.map((f, i) => (
-            <div key={i} className="border-b border-ink/10">
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-center justify-between py-5 text-left"
-              >
-                <span className="text-sm font-medium text-ink pr-4">{f.q}</span>
-                <ChevronDown
-                  className={`w-4 h-4 text-ink/40 flex-shrink-0 transition-transform duration-200 ${
-                    open === i ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {open === i && (
-                <p className="pb-5 text-sm text-ink/60 leading-relaxed">
-                  {f.a}
-                </p>
-              )}
-            </div>
+            <Reveal key={i} delay={i * 80}>
+              <div className="border-b border-ink/10">
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  className="w-full flex items-center justify-between py-5 text-left"
+                >
+                  <span className="text-base font-medium text-ink pr-4">{f.q}</span>
+                  <ChevronDown
+                    className={`w-4 h-4 text-ink/40 flex-shrink-0 transition-transform duration-200 ${
+                      open === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {open === i && (
+                  <p className="pb-5 text-base text-ink/60 leading-relaxed">
+                    {f.a}
+                  </p>
+                )}
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

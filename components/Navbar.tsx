@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Mark from "./Mark";
 
 const links = [
   { href: "/", label: "Home" },
@@ -15,15 +16,15 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-cream/85 backdrop-blur-md border-b border-ink/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo.png"
-              alt="IndiAssure"
-              className="h-10 w-auto mix-blend-multiply"
-            />
+          <Link
+            href="/"
+            className="flex items-center gap-1 font-display text-xl text-ink"
+          >
+            <span>Indi</span>
+            <Mark className="w-3.5 h-4 text-mint translate-y-[1px]" />
+            <span>Assure</span>
           </Link>
 
           <div className="hidden sm:flex items-center gap-8">

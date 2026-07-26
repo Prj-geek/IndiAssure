@@ -1,4 +1,5 @@
 import { Flame, Hand, Clock } from "lucide-react";
+import Reveal from "./Reveal";
 
 const covers = [
   {
@@ -21,23 +22,27 @@ const covers = [
 export default function ThreeFailsShield() {
   return (
     <section className="py-20 sm:py-28 bg-ink text-cream">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-3xl sm:text-4xl text-center">
-          The 3+ Layer Shield
-        </h2>
-        <p className="mt-4 text-center text-cream/60 max-w-xl mx-auto">
-          More than three layers of protection that matter when something goes
-          wrong.
-        </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-center">
+            The 3+ Layer Shield
+          </h2>
+          <p className="mt-4 text-center text-base text-cream/60 max-w-xl mx-auto">
+            More than three layers of protection that matter when something goes
+            wrong.
+          </p>
+        </Reveal>
         <div className="mt-16 grid sm:grid-cols-3 gap-10">
-          {covers.map((c) => (
-            <div key={c.title} className="text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border border-cream/15 mb-5">
-                <c.icon className="w-6 h-6 text-mint-soft" />
+          {covers.map((c, i) => (
+            <Reveal key={c.title} delay={i * 100}>
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-cream/15 mb-5">
+                  <c.icon className="w-7 h-7 text-mint-soft" />
+                </div>
+                <h3 className="font-display text-lg">{c.title}</h3>
+                <p className="mt-2 text-base text-cream/60">{c.desc}</p>
               </div>
-              <h3 className="font-display text-lg">{c.title}</h3>
-              <p className="mt-2 text-sm text-cream/60">{c.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
-import HowItWorks from "@/components/HowItWorks";
+import StoryCards from "@/components/StoryCards";
 import ThreeFailsShield from "@/components/ThreeFailsShield";
 import Solution from "@/components/Solution";
 import Pricing from "@/components/Pricing";
@@ -20,8 +20,8 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
+        <StoryCards />
         <Solution />
-        <HowItWorks />
         <ThreeFailsShield />
         <Pricing />
         <Comparison />
@@ -31,7 +31,7 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="bg-ink text-cream">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col sm:flex-row justify-between gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col sm:flex-row justify-between gap-12">
           <div>
             <div className="flex items-center gap-1 font-display text-2xl">
               <span>Indi</span>
@@ -70,7 +70,7 @@ export default function Home() {
           </div>
         </div>
         <div className="border-t border-cream/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/40">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/40">
             <span>
               © {new Date().getFullYear()} IndiAssure. All rights reserved.
             </span>
