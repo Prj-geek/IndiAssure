@@ -66,7 +66,7 @@ export default function Hero() {
             href="/demo"
             className="btn-pill bg-cream text-ink hover:bg-cream-dim"
           >
-            Get covered — 2 minutes
+            See your estimate
             <ChevronRight className="w-4 h-4 text-mint" />
           </Link>
           <a

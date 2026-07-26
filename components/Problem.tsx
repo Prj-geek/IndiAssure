@@ -26,7 +26,7 @@ export default function Problem() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-ink text-center">
-            The problem is real
+            The reality today
           </h2>
           <p className="mt-4 text-center text-base text-ink/60 max-w-2xl mx-auto">
             We watched a fire take away everything from families who had spent

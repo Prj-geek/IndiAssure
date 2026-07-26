@@ -22,8 +22,8 @@ export default function UninsuredStat() {
       </div>
       <p className="text-xs text-ink/50 text-center max-w-xs">
         Each icon represents <span className="font-medium text-clay">1%</span> of
-        India&rsquo;s 70 million small shops — <span className="font-medium">85%</span> have
-        zero coverage.
+        India&rsquo;s 70 million small shops without insurance — in total,{" "}
+        <span className="font-medium">85%</span> have none.
       </p>
     </div>
   );

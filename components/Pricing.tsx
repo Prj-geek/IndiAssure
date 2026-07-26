@@ -41,7 +41,7 @@ export default function Pricing() {
               href="/demo"
               className="btn-pill bg-ink text-cream hover:bg-ink-soft"
             >
-              Request early access
+              See what it might cost
             </Link>
           </div>
         </Reveal>
