@@ -5,6 +5,10 @@ import Problem from "@/components/Problem";
 import HowItWorks from "@/components/HowItWorks";
 import ThreeFailsShield from "@/components/ThreeFailsShield";
 import Solution from "@/components/Solution";
+import Pricing from "@/components/Pricing";
+import Comparison from "@/components/Comparison";
+import FAQ from "@/components/FAQ";
+import ClaimsProcess from "@/components/ClaimsProcess";
 import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import Mark from "@/components/Mark";
@@ -19,6 +23,10 @@ export default function Home() {
         <Solution />
         <HowItWorks />
         <ThreeFailsShield />
+        <Pricing />
+        <Comparison />
+        <FAQ />
+        <ClaimsProcess />
         <Team />
         <Contact />
       </main>
@@ -62,8 +70,18 @@ export default function Home() {
           </div>
         </div>
         <div className="border-t border-cream/10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-xs text-cream/40">
-            © {new Date().getFullYear()} IndiAssure. All rights reserved.
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cream/40">
+            <span>
+              © {new Date().getFullYear()} IndiAssure. All rights reserved.
+            </span>
+            <div className="flex gap-4">
+              <a href="#" className="hover:text-cream/60 transition-colors">
+                Privacy
+              </a>
+              <a href="#" className="hover:text-cream/60 transition-colors">
+                Terms
+              </a>
+            </div>
           </div>
         </div>
       </footer>

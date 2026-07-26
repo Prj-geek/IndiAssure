@@ -1,20 +1,20 @@
-import { FileWarning, FileX, HeartCrack } from "lucide-react";
+import { BarChart3, FileX, Flame } from "lucide-react";
 
 const problems = [
   {
-    icon: FileWarning,
-    title: "No insurance at all",
-    desc: "Millions of small shops in India have zero coverage. One fire, one flood, one robbery — and it's over.",
+    icon: BarChart3,
+    title: "85% uninsured",
+    desc: "India has 70 million small shops. Nearly 85% have zero insurance coverage.",
   },
   {
     icon: FileX,
-    title: "Paperwork barrier",
-    desc: "Insurance companies ask for years of tax records and bank statements. Most small shop owners don't have them.",
+    title: "The paperwork wall",
+    desc: "Insurance companies require years of tax returns and bank statements. Most cash-run shops can't produce them.",
   },
   {
-    icon: HeartCrack,
-    title: "Families lose everything",
-    desc: "For a small shop owner, the shop is the family's entire savings. When it burns down uninsured, they lose a lifetime.",
+    icon: Flame,
+    title: "One incident ends it all",
+    desc: "India records 1.6 lakh fire incidents every year. A single fire in a market can destroy hundreds of uninsured shops overnight.",
   },
 ];
 

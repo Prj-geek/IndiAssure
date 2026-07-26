@@ -1,35 +1,34 @@
-import { Camera, Eye, ShieldCheck } from "lucide-react";
+import { PhoneCall, UserCheck, IndianRupee } from "lucide-react";
 
 const steps = [
   {
-    icon: Camera,
-    label: "Snap photos of your shop",
+    icon: PhoneCall,
+    title: "Reach out to us",
+    desc: "Call or message — we respond fast.",
   },
   {
-    icon: Eye,
-    label: "We assess what we see",
+    icon: UserCheck,
+    title: "We send an inspector",
+    desc: "A trained person visits your shop.",
   },
   {
-    icon: ShieldCheck,
-    label: "Get covered — no papers needed",
+    icon: IndianRupee,
+    title: "Claim is paid",
+    desc: "Damage assessed, payout initiated.",
   },
 ];
 
-export default function Solution() {
+export default function ClaimsProcess() {
   return (
     <section className="py-20 sm:py-28 bg-cream-dim">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-3xl sm:text-4xl text-ink text-center">
-          Our approach
+          If something happens, here&rsquo;s what you do
         </h2>
-        <p className="mt-4 text-center text-ink/60 max-w-2xl mx-auto">
-          We don&rsquo;t ask for tax papers. We look at the shop itself —
-          what you sell, how big it is, and what&rsquo;s inside.
-        </p>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="mt-16 grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
           {steps.map((s, i) => (
-            <div key={s.label} className="flex flex-col items-center text-center">
-              <div className="relative">
+            <div key={s.title} className="text-center">
+              <div className="relative inline-flex">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15">
                   <s.icon className="w-7 h-7 text-ink" />
                 </div>
@@ -37,7 +36,8 @@ export default function Solution() {
                   {i + 1}
                 </span>
               </div>
-              <p className="mt-4 text-sm font-medium text-ink">{s.label}</p>
+              <h3 className="mt-4 font-display text-lg text-ink">{s.title}</h3>
+              <p className="mt-2 text-sm text-ink/60">{s.desc}</p>
             </div>
           ))}
         </div>

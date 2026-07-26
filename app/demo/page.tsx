@@ -29,8 +29,8 @@ export default function DemoPage() {
               Try the demo
             </h1>
             <p className="mt-3 text-primary/60 max-w-lg mx-auto">
-              Enter your shop details below. We&rsquo;ll simulate how IndiAssure
-              would estimate your coverage — no real data stored.
+              Get an instant coverage estimate based on your shop details. This
+              takes 2 minutes.
             </p>
           </div>
 
@@ -43,6 +43,15 @@ export default function DemoPage() {
               onReset={() => setState("form")}
             />
           )}
+
+          <p className="mt-10 text-center text-xs text-ink/40 max-w-lg mx-auto">
+            This is a concept demo to show how assessment would work — no real
+            policy is issued and no payment is collected.
+          </p>
+          <p className="mt-2 text-center text-xs text-ink/40 max-w-lg mx-auto">
+            This is a demo. No data is stored, transmitted, or used for any
+            purpose. Your photos stay on your device.
+          </p>
         </div>
       </main>
       <footer className="py-8 text-center text-sm text-primary/40 border-t border-primary/10">

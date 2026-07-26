@@ -23,10 +23,11 @@ export default function ThreeFailsShield() {
     <section className="py-20 sm:py-28 bg-ink text-cream">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-3xl sm:text-4xl text-center">
-          The 3-Fails Shield
+          The 3+ Layer Shield
         </h2>
         <p className="mt-4 text-center text-cream/60 max-w-xl mx-auto">
-          Three things that matter most when something goes wrong.
+          More than three layers of protection that matter when something goes
+          wrong.
         </p>
         <div className="mt-16 grid sm:grid-cols-3 gap-10">
           {covers.map((c) => (
