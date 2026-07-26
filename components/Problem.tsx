@@ -39,7 +39,7 @@ export default function Problem() {
           {problems.map((p, i) => (
             <Reveal key={p.title} delay={i * 100}>
               <div className="text-center transition-shadow hover:shadow-lg rounded-2xl p-6">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15 mb-5">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-clay/10 border border-clay/20 mb-5">
                   <p.icon className="w-7 h-7 text-clay" />
                 </div>
                 <h3 className="font-display text-lg text-ink">{p.title}</h3>

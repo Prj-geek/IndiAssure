@@ -6,16 +6,19 @@ const steps = [
     icon: PhoneCall,
     title: "Reach out to us",
     desc: "Call or message — we respond fast.",
+    circleClass: "bg-mint-soft/40 text-ink",
   },
   {
     icon: UserCheck,
     title: "We send an inspector",
     desc: "A trained person visits your shop.",
+    circleClass: "bg-mint-soft text-ink",
   },
   {
     icon: IndianRupee,
     title: "Claim is paid",
     desc: "Damage assessed, payout initiated.",
+    circleClass: "bg-mint text-cream",
   },
 ];
 
@@ -33,13 +36,10 @@ export default function ClaimsProcess() {
             <Reveal key={s.title} delay={i * 100}>
               <div className="flex items-center gap-4">
                 <div className="text-center w-48">
-                  <div className="relative inline-flex">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15">
-                      <s.icon className="w-7 h-7 text-ink" />
-                    </div>
-                    <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-mint text-cream text-xs font-semibold flex items-center justify-center">
-                      {i + 1}
-                    </span>
+                  <div
+                    className={`inline-flex items-center justify-center w-16 h-16 rounded-full ${s.circleClass}`}
+                  >
+                    <s.icon className="w-7 h-7" />
                   </div>
                   <h3 className="mt-4 font-display text-lg text-ink">{s.title}</h3>
                   <p className="mt-2 text-base text-ink/60">{s.desc}</p>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Mark from "./Mark";
@@ -20,7 +21,25 @@ export default function Hero() {
       </motion.div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
-        <span className="text-xs font-medium uppercase tracking-widest text-mint-soft">
+        <div className="flex items-center justify-center gap-3">
+          <Image
+            src="/logo/logo-light-icon.png"
+            alt=""
+            width={44}
+            height={36}
+            className="h-9 w-auto"
+          />
+          <Image
+            src="/logo/logo-light-wordmark-only.png"
+            alt="IndiAssure"
+            width={200}
+            height={34}
+            className="h-8 sm:h-9 w-auto"
+            priority
+          />
+        </div>
+
+        <span className="mt-8 inline-block text-xs font-medium uppercase tracking-widest text-mint-soft">
           Insurance for India&rsquo;s small shops
         </span>
 

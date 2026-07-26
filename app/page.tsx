@@ -33,13 +33,20 @@ export default function Home() {
       <footer className="bg-ink text-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex flex-col sm:flex-row justify-between gap-12">
           <div>
-            <div className="flex items-center gap-1 font-display text-2xl">
+            <div className="flex items-center gap-2 font-display text-2xl">
+              <Image
+                src="/logo/logo-light-icon.png"
+                alt=""
+                width={36}
+                height={30}
+                className="h-8 w-auto"
+              />
               <Image
                 src="/logo/logo-light-wordmark-only.png"
                 alt="IndiAssure"
                 width={160}
                 height={28}
-                className="h-7 w-auto"
+                className="h-6 w-auto"
               />
             </div>
             <a

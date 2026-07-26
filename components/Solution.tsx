@@ -1,4 +1,4 @@
-import { Camera, Eye, ShieldCheck } from "lucide-react";
+import { Camera, Eye, ShieldCheck, ArrowRight } from "lucide-react";
 import Reveal from "./Reveal";
 
 const steps = [
@@ -29,19 +29,19 @@ export default function Solution() {
             what you sell, how big it is, and what&rsquo;s inside.
           </p>
         </Reveal>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-4 max-w-4xl mx-auto">
           {steps.map((s, i) => (
             <Reveal key={s.label} delay={i * 100}>
-              <div className="flex flex-col items-center text-center">
-                <div className="relative">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-ink/15">
-                    <s.icon className="w-7 h-7 text-ink" />
+              <div className="flex items-center gap-4">
+                <div className="flex flex-col items-center text-center w-44">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-mint text-cream">
+                    <s.icon className="w-7 h-7" />
                   </div>
-                  <span className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-mint text-cream text-xs font-semibold flex items-center justify-center">
-                    {i + 1}
-                  </span>
+                  <p className="mt-4 text-base font-medium text-ink">{s.label}</p>
                 </div>
-                <p className="mt-4 text-base font-medium text-ink">{s.label}</p>
+                {i < steps.length - 1 && (
+                  <ArrowRight className="w-6 h-6 text-ink/30 shrink-0 hidden sm:block" />
+                )}
               </div>
             </Reveal>
           ))}

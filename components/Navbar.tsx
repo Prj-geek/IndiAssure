@@ -20,14 +20,22 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
-            className="flex items-center gap-1 font-display text-xl text-ink"
+            className="flex items-center gap-2 font-display text-xl text-ink"
           >
+            <Image
+              src="/logo/logo-dark-icon.png"
+              alt=""
+              width={32}
+              height={26}
+              className="h-7 w-auto"
+              priority
+            />
             <Image
               src="/logo/logo-dark-wordmark-only.png"
               alt="IndiAssure"
               width={140}
               height={24}
-              className="h-6 w-auto"
+              className="h-5 w-auto"
               priority
             />
           </Link>

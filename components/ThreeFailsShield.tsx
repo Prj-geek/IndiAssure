@@ -6,16 +6,19 @@ const covers = [
     icon: Flame,
     title: "Fire & electrical",
     desc: "Fire damage and short-circuit incidents covered.",
+    bgClass: "bg-clay",
   },
   {
     icon: Hand,
     title: "Theft & burglary",
     desc: "Protection against robbery and break-ins.",
+    bgClass: "bg-mint-soft",
   },
   {
     icon: Clock,
     title: "Business interruption",
     desc: "Fixed daily cash while your shop recovers — so your family still has money for rent and food.",
+    bgClass: "bg-mint",
   },
 ];
 
@@ -36,8 +39,14 @@ export default function ThreeFailsShield() {
           {covers.map((c, i) => (
             <Reveal key={c.title} delay={i * 100}>
               <div className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-cream/15 mb-5">
-                  <c.icon className="w-7 h-7 text-mint-soft" />
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-20 mb-5 text-ink ${c.bgClass}`}
+                  style={{
+                    clipPath:
+                      "polygon(50% 0%, 100% 20%, 100% 55%, 50% 100%, 0% 55%, 0% 20%)",
+                  }}
+                >
+                  <c.icon className="w-7 h-7" />
                 </div>
                 <h3 className="font-display text-lg">{c.title}</h3>
                 <p className="mt-2 text-base text-cream/60">{c.desc}</p>
